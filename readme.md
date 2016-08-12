@@ -1,0 +1,1 @@
+docker build -t ido4pro/tineco-esp8266-sming-with-toolchain-docker .
