@@ -39,7 +39,9 @@ RUN rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 RUN git clone https://github.com/c9/core.git /opt/cloud9
 WORKDIR /opt/cloud9
 RUN scripts/install-sdk.sh
-RUN npm install
+
+# Install all the required dependencies
+RUN curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 # ------------------------------------------------------------------------------
 # Tweak standlone.js conf
